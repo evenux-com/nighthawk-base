@@ -21,7 +21,7 @@ export class SwiperComponent {
     },
     autoplay: {
       enabled: true,
-      speed: 5000,
+      speed: 1000,
       delay: 1000,
     },
   };

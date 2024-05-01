@@ -1,6 +1,10 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { InMemoryScrollingFeature, InMemoryScrollingOptions, withInMemoryScrolling } from '@angular/router';
+import { provideRouter, withHashLocation } from '@angular/router';
+import {
+  InMemoryScrollingFeature,
+  InMemoryScrollingOptions,
+  withInMemoryScrolling,
+} from '@angular/router';
 import { routes } from './app.routes';
 
 const scrollConfig: InMemoryScrollingOptions = {
@@ -8,8 +12,12 @@ const scrollConfig: InMemoryScrollingOptions = {
   anchorScrolling: 'enabled',
 };
 
-const inMemoryScrollingFeature: InMemoryScrollingFeature = withInMemoryScrolling(scrollConfig);
+const inMemoryScrollingFeature: InMemoryScrollingFeature =
+  withInMemoryScrolling(scrollConfig);
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, inMemoryScrollingFeature)],
+  providers: [
+    provideRouter(routes, inMemoryScrollingFeature),
+    provideRouter(routes, withHashLocation()),
+  ],
 };
