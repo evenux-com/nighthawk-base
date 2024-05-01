@@ -1,0 +1,17 @@
+.small {
+  display: block;
+  width: 420px;
+
+  ::ng-deep {
+    .day {
+      max-width: calc(100% / 7) !important;
+      border-radius: 8px !important;
+      margin: 2px !important;
+
+      .number {
+        font-size: 18px !important;
+        line-height: 52px !important;
+      }
+    }
+  }
+}

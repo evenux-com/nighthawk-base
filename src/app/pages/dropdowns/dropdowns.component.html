@@ -1,0 +1,58 @@
+<app-page>
+  <div class="container">
+    <div class="mb-5">
+      <button
+        nighthawk-button
+        nighthawk-dropdown-trigger
+        color="primary"
+        size="large"
+        [rounded]="true"
+        [border]="true"
+        [dropdownTrigger]="dropdown"
+        class="me-4"
+      >
+        Click to open the dropdwon
+      </button>
+
+      <button
+        nighthawk-button
+        nighthawk-dropdown-trigger
+        color="primary"
+        size="large"
+        [rounded]="true"
+        [border]="true"
+        [dropdownTrigger]="dropdown"
+        [dropdownOnHover]="true"
+      >
+        Hover to open the dropdwon
+      </button>
+    </div>
+
+    <nighthawk-dropdown #dropdown>Dropdown content</nighthawk-dropdown>
+
+    <textarea readonly rows="23" class="mb-5">
+      <button
+        nighthawk-button
+        nighthawk-dropdown-trigger
+        color="primary"
+        size="large"
+        [rounded]="true"
+        [border]="true"
+        [dropdownTrigger]="dropdown"         // reference to dropdown element
+        [direction]="'end'"                  // start | center | end
+        [dropdownOffset]="0"                 // margin-top
+        [dropdownHideDelay]="500"            // wait ms before closing on hover
+        [dropdownOnHover]="false"            // optionally use hover instead of click
+        [dropdownCloseOnClickInside]="false" // close dropdown when clicking inside dropdown?
+        [dropdownCloseOnRouteChange]="true"  // close on navigation
+        [dropdownPanelClass]="''"            // optional panel class
+      >
+        Click to open the dropdwon
+      </button>
+
+      <nighthawk-dropdown #dropdown>
+        Dropdown content
+      </nighthawk-dropdown>
+    </textarea>
+  </div>
+</app-page>

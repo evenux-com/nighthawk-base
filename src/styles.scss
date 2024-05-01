@@ -1,0 +1,21 @@
+@import "@evenux.com/nighthawk-angular-devkit/styles";
+
+:root {
+  --minimum-page-loading-time: 500;
+  --minimum-route-switch-loading-time: 1000;
+  --background-image: initial;
+  --font-family: "Cutive Mono", monospace;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 5em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: monospace;
+  border: 1px solid #bbb;
+  padding: 1em;
+  padding-top: 40px;
+  white-space: pre-wrap;
+}

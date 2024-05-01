@@ -1,0 +1,88 @@
+<app-page>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-auto">
+        <nighthawk-checkbox [(ngModel)]="checkbox1" type="default" size="large">
+          Large
+        </nighthawk-checkbox>
+      </div>
+      <div class="col-auto">
+        <nighthawk-checkbox
+          [(ngModel)]="checkbox2"
+          type="default"
+          size="medium"
+        >
+          Medium
+        </nighthawk-checkbox>
+      </div>
+      <div class="col-auto">
+        <nighthawk-checkbox [(ngModel)]="checkbox3" type="default" size="small">
+          Small
+        </nighthawk-checkbox>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-auto">
+        <nighthawk-checkbox type="rounded" color="primary" size="large"
+          >Large</nighthawk-checkbox
+        >
+      </div>
+      <div class="col-auto">
+        <nighthawk-checkbox type="rounded" color="secondary" size="medium"
+          >Medium</nighthawk-checkbox
+        >
+      </div>
+      <div class="col-auto">
+        <nighthawk-checkbox type="rounded" color="black" size="small"
+          >Small</nighthawk-checkbox
+        >
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-auto">
+        <nighthawk-checkbox type="switch" color="primary" size="large"
+          >Large</nighthawk-checkbox
+        >
+      </div>
+      <div class="col-auto">
+        <nighthawk-checkbox type="switch" color="secondary" size="medium"
+          >Medium</nighthawk-checkbox
+        >
+      </div>
+      <div class="col-auto">
+        <nighthawk-checkbox type="switch" color="black" size="small"
+          >Small</nighthawk-checkbox
+        >
+      </div>
+    </div>
+
+    <textarea readonly rows="9" class="mb-5">
+      <nighthawk-checkbox
+        type="default"              // default | rounded | switch
+        size="small"                // small | medium | large
+        [(ngModel)]="checkboxValue" // optional data binding
+        formControlName="checkbox"  // optional data binding
+      >
+        Label
+      </nighthawk-checkbox>
+    </textarea>
+
+    <div class="col-12 mb-4">
+      <nighthawk-radios
+        [(ngModel)]="radio1"
+        [options]="radioOptions"
+        [size]="'large'"
+      />
+    </div>
+
+    <textarea readonly rows="6">
+      <nighthawk-radios
+        [size]="'large'"         // small | medium | large
+        [options]="radioOptions" // {label: 'test', value: 123 }
+        [(ngModel)]="radioValue" 
+      />
+    </textarea>
+  </div>
+</app-page>

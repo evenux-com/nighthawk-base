@@ -1,0 +1,89 @@
+<app-page>
+  <div class="container">
+    <form [formGroup]="form" class="row mb-4">
+      <div class="col">
+        <nighthawk-range-select
+          [min]="0"
+          [max]="500"
+          [size]="'large'"
+          [(ngModel)]="rangeSelect1"
+          [ngModelOptions]="{ standalone: true }"
+          (ngModelChange)="debugLog(rangeSelect1)"
+        />
+      </div>
+      <div class="col">
+        <nighthawk-range-select
+          [min]="0"
+          [max]="500"
+          [size]="'medium'"
+          [value]="100"
+        />
+      </div>
+      <div class="col">
+        <nighthawk-range-select
+          [min]="0"
+          [max]="500"
+          [size]="'small'"
+          [value]="200"
+        />
+      </div>
+    </form>
+
+    <textarea readonly rows="9" class="mb-5">
+      <nighthawk-range-select
+        [min]="0"                          // minimum value
+        [max]="500"                        // maximum value
+        [value]="200"                      // initial static value
+        [size]="'large'"                   // small | medium | large
+        [(ngModel)]="rangeSelectValue"     // optional data binding
+        formControlName="rangeFormControl" // optional data binding
+      />
+    </textarea>
+
+    <form [formGroup]="form" class="row mb-4">
+      <div class="col">
+        <nighthawk-range-picker
+          [(ngModel)]="rangePicker1"
+          [ngModelOptions]="{ standalone: true }"
+          (ngModelChange)="debugLog(rangePicker1)"
+          [min]="0"
+          [max]="500"
+          [size]="'large'"
+          [valueA]="0"
+          [valueB]="50"
+        />
+      </div>
+      <div class="col">
+        <nighthawk-range-picker
+          [min]="0"
+          [max]="500"
+          [size]="'medium'"
+          [valueA]="0"
+          [valueB]="75"
+          formControlName="rangePicker2"
+        />
+      </div>
+      <div class="col">
+        <nighthawk-range-picker
+          [min]="0"
+          [max]="500"
+          [size]="'small'"
+          [valueA]="0"
+          [valueB]="100"
+        />
+      </div>
+    </form>
+
+    <textarea readonly rows="10">
+      <nighthawk-range-picker 
+        [min]="0"                          // minimum value
+        [max]="500"                        // maximum value
+        [valueA]="100"                     // initial static A value
+        [valueB]="300"                     // initial static B value
+        [size]="'large'"                   // small | medium | large
+        [(ngModel)]="rangeSelectValue"     // optional data binding
+        formControlName="rangeFormControl" // optional data binding
+      />
+    </textarea>
+  </div>
+</app-page>

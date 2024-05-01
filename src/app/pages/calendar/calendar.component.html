@@ -1,0 +1,29 @@
+<app-page>
+  <div class="container">
+    <div class="mb-5">
+      <nighthawk-calendar
+        [month]="month"
+        [year]="year"
+        [startDayOfWeek]="1"
+        class="d-block mb-5"
+      />
+      <nighthawk-calendar
+        [month]="month"
+        [year]="year"
+        [startDayOfWeek]="1"
+        class="small"
+      />
+    </div>
+
+    <textarea readonly rows="9">
+      <nighthawk-calendar 
+        [month]="month" 
+        [year]="year" 
+        [startDayOfWeek]="1"                // 0 = sunday
+        [dayNames]                          // ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        (selectedDay)="onSelectDay($event)" // emits full date object { day, month, year }
+        class="mb-5"
+      />
+    </textarea>
+  </div>
+</app-page>

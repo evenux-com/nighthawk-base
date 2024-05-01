@@ -1,0 +1,62 @@
+<app-page>
+  <div class="container">
+    <div class="mb-5">
+      <button
+        nighthawk-button
+        type="button"
+        color="primary"
+        size="large"
+        [rounded]="true"
+        (click)="openConfirmation()"
+        class="me-4"
+      >
+        Request a confirmation
+      </button>
+      <button
+        nighthawk-button
+        type="button"
+        color="primary"
+        size="large"
+        [rounded]="true"
+        (click)="openNotification()"
+        class="me-4"
+      >
+        Show a notification
+      </button>
+      <button
+        nighthawk-button
+        type="button"
+        color="primary"
+        size="large"
+        [rounded]="true"
+        (click)="openDialogSample()"
+      >
+        Show sample dialog
+      </button>
+    </div>
+
+    <textarea readonly rows="22" class="mb-5">
+      public openConfirmation(): void {
+        const ref = this.confirmationService.show('Confirmation', 'This is a sample confirmation - do you agree?', 'Agree', 'Cancel');
+        ref.componentInstance?.dialogRef.closed.pipe(take(1)).subscribe((result) => {
+          this.notificationService.show('Notification', `You did ${result ? 'indeed' : 'not'} agree...`);
+        });
+      }
+    
+      public openNotification(): void {
+        this.notificationService.show('Notification', 'This is a sample notification you can display...');
+      }
+
+      public openCustomDialog(): void {
+        const ref = this.dialogService.open(DialogSampleComponent, {
+          disableClose: true,
+          closeOnNavigation: true,
+        });
+    
+        ref.closed.pipe(take(1)).subscribe((result) => {
+          console.log(result);
+        });
+      }
+    </textarea>
+  </div>
+</app-page>

@@ -1,0 +1,79 @@
+<app-page>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col">
+        <button
+          nighthawk-button
+          color="primary"
+          size="large"
+          [border]="true"
+          [rounded]="true"
+          [disabled]="false"
+        >
+          Primary button
+        </button>
+      </div>
+      <div class="col">
+        <button
+          nighthawk-button
+          color="secondary"
+          size="large"
+          [border]="true"
+          [rounded]="true"
+          [disabled]="false"
+        >
+          Secondary button
+        </button>
+      </div>
+      <div class="col">
+        <button
+          nighthawk-button
+          color="black"
+          size="large"
+          [border]="true"
+          [rounded]="true"
+          [disabled]="false"
+        >
+          Black button
+        </button>
+      </div>
+      <div class="col">
+        <button
+          nighthawk-button
+          color="white"
+          size="large"
+          [border]="true"
+          [rounded]="true"
+          [disabled]="false"
+        >
+          White button
+        </button>
+      </div>
+      <div class="col">
+        <button
+          nighthawk-button
+          color="transparent"
+          size="large"
+          [border]="true"
+          [rounded]="true"
+          [disabled]="false"
+        >
+          Transparent button
+        </button>
+      </div>
+    </div>
+
+    <textarea readonly rows="11">
+      <button
+        nighthawk-button
+        [color]="'transparent'" // primary | secondary | black | white | transparent
+        [size]="'large'"        // small | medium | large
+        [border]="true" 
+        [rounded]="true" 
+        [disabled]="false"
+      >
+        Button label
+      </button>
+    </textarea>
+  </div>
+</app-page>
